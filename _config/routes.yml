@@ -1,0 +1,13 @@
+---
+Name: routes
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+Director:
+  rules:
+    'GoogleRecaptcha' : 'GoogleReCaptchaController'
+
+GoogleReCaptchaController:
+  verification_endpoint:
+    'https://www.google.com/recaptcha/api/siteverify'
