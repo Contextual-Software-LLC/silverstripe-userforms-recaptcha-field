@@ -9,8 +9,7 @@
 
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Control\Controller;
-
-
+use guzzlehttp\guzzle;
 
 class GoogleReCaptchaController extends Controller
 {
@@ -25,16 +24,15 @@ class GoogleReCaptchaController extends Controller
 
         $apiEndpoint = Config::inst()->get('GoogleReCaptchaController', 'verification_endpoint');
 
-        $service = new RestfulService($apiEndpoint, 60); //domain, cache duration
-        $service->setQueryString([
-            'secret'	=> $this->getRecaptchaSecretKey(),
-            'response'	=> $userResponse
+        $client = new GuzzleHttp\Client();
+        $res = $client->request('GET', $apiEndpoint, [
+            'query' => [
+                'secret' => $this->getRecaptchaSecretKey(),
+                'response' => $userResponse,
+            ]
         ]);
 
-        $response = $service->request('',"POST");
-        $body = $response->getBody();
-
-        return $body;
+        return $res->getBody()->getContents();
     }
 
     private function getRecaptchaSecretKey() {
