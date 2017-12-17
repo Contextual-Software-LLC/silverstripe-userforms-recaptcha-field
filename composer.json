@@ -1,8 +1,9 @@
 {
     "name": "dave-collins/silverstripe-google-recaptcha",
     "type": "silverstripe-module",
+    "description": "A simple module to add a Google reCaptcha to form.",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "silverstripe/framework": "^4"
     },
     "license": "BSD-3-Clause",
     "authors": [
