@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Created by IntelliJ IDEA.
- * User: davidc
- * Date: 8/18/17
- * Time: 12:00 PM
- */
-
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Control\Controller;
 use guzzlehttp\guzzle;

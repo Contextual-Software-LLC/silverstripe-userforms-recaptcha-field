@@ -5,12 +5,7 @@ use SilverStripe\View\Requirements;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\CompositeField;
 use SilverStripe\Core\Config\Config;
-/**
- * Created by IntelliJ IDEA.
- * User: davidc
- * Date: 8/18/17
- * Time: 10:46 AM
- */
+
 class GoogleReCaptchaField extends EditableFormField {
     // NOTE: remove? in lang now
     private static $singular_name = 'Google reCAPTCHA Field';
