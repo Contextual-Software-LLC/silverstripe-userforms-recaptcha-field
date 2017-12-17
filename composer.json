@@ -1,6 +1,6 @@
 {
     "name": "dave-collins/silverstripe-google-recaptcha",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "description": "A simple module to add a Google reCaptcha to form.",
     "require": {
         "silverstripe/framework": "^4",
