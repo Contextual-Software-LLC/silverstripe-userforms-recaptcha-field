@@ -1,5 +1,10 @@
 <?php
 
+use SilverStripe\UserForms\Model\EditableFormField;
+use SilverStripe\View\Requirements;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\CompositeField;
+use SilverStripe\Core\Config\Config;
 /**
  * Created by IntelliJ IDEA.
  * User: davidc
@@ -60,7 +65,7 @@ class GoogleReCaptchaField extends EditableFormField {
 
         $callbackRoute = $this->getCallbackRoute();
 
-        Requirements::javascriptTemplate("/silverstripe-google-recaptcha-field/javascript/google-recaptcha-field.js", array(
+        Requirements::javascriptTemplate("silverstripe-google-recaptcha/javascript/google-recaptcha-field.js", array(
         	'callbackRoute'	=> $callbackRoute
 		));
 
@@ -74,7 +79,6 @@ class GoogleReCaptchaField extends EditableFormField {
 
         $field = CompositeField::create($content)
             ->setName($this->Name)
-            ->setID($this->Name)
             ->setFieldHolderTemplate('UserFormsRecaptchaField_holder')
             ->addExtraClass('google-recaptcha-holder');
 

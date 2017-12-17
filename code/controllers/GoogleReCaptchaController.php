@@ -6,9 +6,15 @@
  * Date: 8/18/17
  * Time: 12:00 PM
  */
+
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Control\Controller;
+
+
+
 class GoogleReCaptchaController extends Controller
 {
-    public static $allowed_actions = [
+    private static $allowed_actions = [
         'verify',
     ];
 

@@ -1,10 +1,4 @@
----
-Name: routes
-After:
-  - 'framework/*'
-  - 'cms/*'
----
-Director:
+SilverStripe\Control\Director:
   rules:
     'GoogleRecaptcha' : 'GoogleReCaptchaController'
 
