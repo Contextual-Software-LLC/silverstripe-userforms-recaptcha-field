@@ -61,7 +61,7 @@ class GoogleReCaptchaField extends EditableFormField {
 
         $callbackRoute = $this->getCallbackRoute();
 
-        Requirements::javascriptTemplate("silverstripe-google-recaptcha/javascript/google-recaptcha-field.js", [
+        Requirements::javascriptTemplate("contextualsoftware/silverstripe-google-recaptcha/javascript/google-recaptcha-field.js", [
         	'callbackRoute'	=> $callbackRoute
 		]);
 
