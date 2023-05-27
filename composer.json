@@ -4,7 +4,6 @@
     "description": "A module to add a Google reCaptcha to a Userform.",
     "require": {
         "silverstripe/framework": "~5",
-        "guzzlehttp/guzzle": "^6.3",
         "silverstripe/userforms": "^6"
     },
     "license": "BSD-3-Clause",
