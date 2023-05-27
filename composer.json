@@ -1,6 +1,6 @@
 {
     "name": "contextualsoftware/silverstripe-google-recaptcha",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "description": "A module to add a Google reCaptcha to a Userform.",
     "require": {
         "silverstripe/framework": "~5",
