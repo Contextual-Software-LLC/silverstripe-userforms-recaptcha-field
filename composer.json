@@ -3,7 +3,7 @@
     "type": "silverstripe-module",
     "description": "A module to add a Google reCaptcha to a Userform.",
     "require": {
-        "silverstripe/framework": "^4 || ^5",
+        "silverstripe/framework": ">=4",
         "guzzlehttp/guzzle": "^6.3",
         "silverstripe/userforms": "^6"
     },
