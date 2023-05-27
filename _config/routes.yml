@@ -1,7 +1,7 @@
 SilverStripe\Control\Director:
   rules:
-    'GoogleRecaptcha' : 'GoogleReCaptchaController'
+    'GoogleRecaptcha' : 'ContextualSoftware\GoogleRecaptcha\Controllers\GoogleReCaptchaController'
 
-GoogleReCaptchaController:
+ContextualSoftware\GoogleRecaptcha\Controllers\GoogleReCaptchaController:
   verification_endpoint:
     'https://www.google.com/recaptcha/api/siteverify'

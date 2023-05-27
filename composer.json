@@ -1,16 +1,17 @@
 {
-    "name": "dave-collins/silverstripe-google-recaptcha",
+    "name": "contextualsoftware/silverstripe-google-recaptcha",
     "type": "silverstripe-module",
-    "description": "A simple module to add a Google reCaptcha to form.",
+    "description": "A module to add a Google reCaptcha to a Userform.",
     "require": {
         "silverstripe/framework": "^4",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "silverstripe/userforms": "^6"
     },
     "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Dave Collins",
-            "email": "davidcollins4481@gmail.com"
+            "email": "dave.collins@contextualsoftware.com"
         }
     ]
 }

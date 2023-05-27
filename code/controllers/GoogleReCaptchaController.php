@@ -1,8 +1,10 @@
 <?php
 
+namespace ContextualSoftware\GoogleRecaptcha\Controllers;
+
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Control\Controller;
-use guzzlehttp\guzzle;
+use GuzzleHttp;
 
 class GoogleReCaptchaController extends Controller
 {
@@ -15,7 +17,7 @@ class GoogleReCaptchaController extends Controller
         $request = $this->getRequest();
         $userResponse = $request->postVar('userResponse');
 
-        $apiEndpoint = Config::inst()->get('GoogleReCaptchaController', 'verification_endpoint');
+        $apiEndpoint = Config::inst()->get(GoogleReCaptchaController::class, 'verification_endpoint');
 
         $client = new GuzzleHttp\Client();
         $res = $client->request('GET', $apiEndpoint, [

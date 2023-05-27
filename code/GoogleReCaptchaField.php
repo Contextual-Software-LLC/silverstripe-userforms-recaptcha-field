@@ -1,5 +1,9 @@
 <?php
 
+namespace ContextualSoftware\GoogleRecaptcha;
+
+use Exception;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\UserForms\Model\EditableFormField;
 use SilverStripe\View\Requirements;
 use SilverStripe\Forms\LiteralField;
@@ -7,7 +11,6 @@ use SilverStripe\Forms\CompositeField;
 use SilverStripe\Core\Config\Config;
 
 class GoogleReCaptchaField extends EditableFormField {
-    // NOTE: remove? in lang now
     private static $singular_name = 'Google reCAPTCHA Field';
     private static $plural_name = 'Google reCAPTCHA Fields';
 
@@ -38,8 +41,6 @@ class GoogleReCaptchaField extends EditableFormField {
         if (empty($this->recaptchaSiteKey) || empty($this->recaptchaSecretKey)) {
             throw new Exception('Google reCAPTCHA site and secret keys required');
         }
-
-        // TODO: throw an exception if UDF module not included?
     }
 
     /**
@@ -49,7 +50,7 @@ class GoogleReCaptchaField extends EditableFormField {
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(array('Default', 'Validation', 'RightTitle'));
+        $fields->removeByName(['Default', 'Validation', 'RightTitle']);
 
         return $fields;
     }
@@ -60,9 +61,9 @@ class GoogleReCaptchaField extends EditableFormField {
 
         $callbackRoute = $this->getCallbackRoute();
 
-        Requirements::javascriptTemplate("silverstripe-google-recaptcha/javascript/google-recaptcha-field.js", array(
+        Requirements::javascriptTemplate("silverstripe-google-recaptcha/javascript/google-recaptcha-field.js", [
         	'callbackRoute'	=> $callbackRoute
-		));
+		]);
 
         // TODO: Refactor the GoogleReCaptchaField model into a regular form field (to match naming convention)
 		// TODO: Re-name this class to something that follows the UserForms naming convention
@@ -76,9 +77,6 @@ class GoogleReCaptchaField extends EditableFormField {
             ->setName($this->Name)
             ->setFieldHolderTemplate('UserFormsRecaptchaField_holder')
             ->addExtraClass('google-recaptcha-holder');
-
-        # is this needed?
-        #$this->doUpdateFormField($field);
 
         return $field;
     }
@@ -97,11 +95,6 @@ class GoogleReCaptchaField extends EditableFormField {
     public function showInReports()
     {
         return false;
-    }
-
-    public function getIcon()
-    {
-        return USERFORMS_DIR . '/images/editableliteralfield.png';
     }
 
     private function getRecaptchaSiteKey() {
