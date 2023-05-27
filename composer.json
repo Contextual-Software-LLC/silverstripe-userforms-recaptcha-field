@@ -12,10 +12,5 @@
             "name": "Dave Collins",
             "email": "dave.collins@contextualsoftware.com"
         }
-    ],
-    "extra": {
-        "expose": [
-            "javascript"
-        ]
-    }
+    ]
 }
